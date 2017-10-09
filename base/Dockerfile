@@ -26,7 +26,7 @@ RUN apt-get -y update && apt-get install -y \
 WORKDIR /work 
 
 RUN git clone https://github.com/google/honggfuzz.git && \
-    cd honggfuzz && ./make && \
+    cd honggfuzz && make && \
     ln -s /work/honggfuzz/honggfuzz /usr/bin/honggfuzz && \
     ln -s /work/honggfuzz/hfuzz_cc/hfuzz-gcc /usr/bin/hfuzz-gcc && \
     ln -s /work/honggfuzz/hfuzz_cc/hfuzz-g++ /usr/bin/hfuzz-g++ && \
