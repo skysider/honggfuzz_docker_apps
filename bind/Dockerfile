@@ -17,7 +17,7 @@ RUN git clone https://source.isc.org/git/bind9.git && \
     ./configure --prefix=/work/dist/ --disable-threads \
     --without-gssapi --disable-chroot --disable-linux-caps --disable-seccomp \
     --without-libtool --enable-ipv6 --enable-atomic --enable-epoll --with-openssl=no && \
-    make clean && -j$(nproc) && make install && \
+    make clean && make -j$(nproc) && make install && \
     cd .. && cp honggfuzz/examples/bind/named.conf dist/etc/ && \
     cp honggfuzz/examples/bind/test.zone dist/etc/ && \
     sed -i 's/home\/jagger\/fuzz\/bind/work/g' dist/etc/named.conf && \
