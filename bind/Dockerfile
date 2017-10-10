@@ -25,6 +25,8 @@ RUN git clone https://source.isc.org/git/bind9.git && \
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+COPY update-bind.sh /work/
+
 CMD ["/usr/bin/supervisord"]
 
     
