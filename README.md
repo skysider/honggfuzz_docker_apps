@@ -5,6 +5,10 @@ docker environment for fuzzing applications with honggfuzz
 
 - [bind](bind)
 
+## Run
+
+See README.md in each application directory
+
 ## Todo
 
 add more applications
