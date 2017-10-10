@@ -1,4 +1,4 @@
-FROM skysider/honggfuzz_base
+FROM skysider/honggfuzz_base:latest
 
 LABEL maintainer="junchaoluan@gmail.com"
 
