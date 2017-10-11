@@ -12,7 +12,7 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://source.isc.org/git/bind9.git && \
-    cp -r bind9 bind-9.11.1-P3 && cd bind9-11.1-P3 && \
+    cp -r bind9 bind9-9.11.1-P3 && cd bind9-11.1-P3 && \
     git checkout v9_11_1_P3 && patch -p1 < ../honggfuzz/examples/bind/patch-bind-9.11.1-P3 && \
     sed -i 's/\/home\/jagger\/src\/honggfuzz\/hfuzz_cc\///g' compile.sh && \
     sed -i 's/home\/jagger\/fuzz\/bind/work/g' compile.sh && \
