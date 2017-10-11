@@ -4,10 +4,9 @@ docker environment for fuzzing bind with honggfuzz
 ## Run
 
 ```
-docker run -d --name bind -v $(pwd)/crash:/work/crash skysider/honggfuzz_bind
-docker exec -it bind /bin/bash
-root@9ed0fafe5cb2:/work# honggfuzz -s -f honggfuzz/examples/bind/IN.req-response/ \
--p "`pidof named`" -S -- /bin/nc -q2 -w2 127.0.0.1 53
+docker run -it --name bind -v $(pwd)/crash:/work/crash skysider/honggfuzz_bind
+root@9ed0fafe5cb2:/work# honggfuzz -f honggfuzz/examples/bind/IN.req-response/ -z -P -- \
+./dist/sbin/named -c dist/etc/named.conf -g
 ```
 ## Reference
 

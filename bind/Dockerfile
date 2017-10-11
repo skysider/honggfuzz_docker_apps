@@ -22,10 +22,8 @@ RUN git clone https://source.isc.org/git/bind9.git && \
     sed -i 's/home\/jagger\/fuzz\/bind/work/g' dist/etc/named.conf && \
     mkdir -p /var/log/supervisor
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
 COPY update-bind.sh /work/
 
-CMD ["/usr/bin/supervisord"]
+CMD ["/bin/bash"]
 
     
